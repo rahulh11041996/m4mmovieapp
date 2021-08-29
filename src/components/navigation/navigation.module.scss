@@ -1,0 +1,88 @@
+@use '../../assets/styles/colors' as *;
+@use '../../assets/styles/mixins' as *;
+.page__header {
+  padding: 1rem var(--layoutPadding);
+  border-bottom: 0.1rem solid rgba($white, 0.2);
+  justify-content: space-between;
+  min-height: 7rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0.3rem 1.6rem rgba($woodsmoke, 0.1);
+  .navigation__list {
+    gap: 8rem;
+    align-items: center;
+    border-right: 0.1rem solid rgba($white, 0.2);
+    padding-right: 4rem;
+    a {
+      text-decoration: none;
+      span {
+        color: $white;
+        opacity: 0.6;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 0.2rem;
+        transition: 0.3s;
+      }
+      &:hover,
+      &.active__navigation {
+        span {
+          opacity: 1;
+          position: relative;
+          &::after {
+            @include activeDot;
+          }
+        }
+      }
+      &:hover {
+        span {
+          opacity: 0.8;
+          &::after {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+  .user__profile_avatar {
+    margin-left: 4rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &.scroll__triggered {
+    background: rgba($woodsmoke, 0.9);
+    min-height: 5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border: none;
+    box-shadow: 0 0.3rem 1.6rem rgba($woodsmoke, 0.8);
+    .user__profile_avatar {
+      width: 3.6rem;
+      min-width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
+}
+.page_logo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $torchRed;
+  letter-spacing: 0.2rem;
+  @include flexCenter;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+.movies_list {
+}

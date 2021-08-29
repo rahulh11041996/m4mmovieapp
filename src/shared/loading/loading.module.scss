@@ -1,0 +1,51 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/styles/colors' as *;
+.loading__container {
+  @include fullSize;
+  background: $scarpaFlow;
+  position: fixed;
+  @include flexCenter;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.loader__box {
+  width: 8rem;
+  height: 8rem;
+  border: 1rem solid $ronchi;
+  border-radius: 50%;
+  border-top-color: $scarpaFlow;
+  animation: rotate 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader__text {
+  letter-spacing: 0.5rem;
+  -webkit-box-reflect: below -1.4rem linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  span {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: $white;
+    position: relative;
+    display: inline-block;
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: calc(0.2s * var(--i));
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-1rem);
+  }
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,31 @@
+@use './colors' as *;
+@use './mixins' as *;
+html {
+  font-size: 62.5%;
+  body {
+    background: $woodsmoke;
+    @include scrollbar;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  @include primaryFont;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+p,
+label {
+  @include secondaryFont;
+}

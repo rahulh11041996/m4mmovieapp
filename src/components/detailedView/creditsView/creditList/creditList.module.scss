@@ -1,0 +1,38 @@
+@use '../../../../assets/styles/colors' as *;
+.single__cast {
+  align-items: center;
+  gap: 1.6rem;
+  transition: all ease 0.3s;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  &:hover {
+    background: rgba($scarpaFlow, 0.5);
+  }
+}
+.cast__avatar {
+  width: 6rem;
+  min-width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.cast__details {
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $white;
+  }
+  h5 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgba($white, 0.8);
+    margin-top: 0.1rem;
+  }
+}

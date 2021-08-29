@@ -1,0 +1,34 @@
+@use './colors' as *;
+@use './mixins' as *;
+.page_flex {
+  display: flex;
+}
+
+.page_grid {
+  display: grid;
+}
+
+.wd_100 {
+  width: 100%;
+}
+
+.ht_100 {
+  height: 100%;
+}
+
+.page__header {
+  height: 6rem;
+  @extend .page_flex;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.251);
+  h1 {
+     align-items: center;
+    color: $white;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+  &::after{
+   @include activeDot;
+  }
+  }
+}

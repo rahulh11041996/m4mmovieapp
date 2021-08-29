@@ -1,0 +1,31 @@
+@use '../../../assets/styles/colors' as *;
+@use '../../../assets/styles/mixins' as *;
+.listing__banner {
+  --size: 60rem;
+  height: var(--size);
+  grid-template-columns: 3fr 2fr;
+  overflow: hidden;
+  border-bottom: 0.1rem solid rgba($scarpaFlow, 0.3);
+  position: relative;
+  &::after {
+    content: "";
+    @include fullSize;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(160, 160, 160, 0) 80%,
+      rgba(6, 6, 6, 0.4) 100%
+    );
+  }
+  .listing__banner_large {
+    grid-row: span 2;
+    height: var(--size);
+  }
+  .listing__banner_small {
+    height: calc(var(--size) / 2);
+  }
+}

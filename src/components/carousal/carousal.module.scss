@@ -1,0 +1,30 @@
+@use '../movies/movies.module.scss';
+@use '../../assets/styles/mixins' as *;
+
+.trending__icon {
+  &::before {
+    @include iconGenerator("\f201", inherit, 1.1rem);
+  }
+}
+
+.slider__container {
+  gap: 2rem;
+  padding-top: 2rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+  user-select: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  > * {
+    width: 12rem;
+    &:nth-child(1) {
+      margin-left: var(--layoutPadding);
+    }
+  }
+}
+
+.slider__wrapper {
+  overflow: hidden;
+  margin-bottom: 2.4rem;
+}

@@ -1,0 +1,94 @@
+@use '../../../assets/styles/colors' as *;
+@use '../../../assets/styles/mixins' as *;
+.search_page {
+  background: $woodsmoke;
+  @include fullSize;
+  min-height: calc(100vh - 7rem);
+  @include flexCenter;
+  padding: 0 var(--layoutPadding);
+  flex-direction: column;
+  margin-top: 7rem;
+}
+.search__container {
+  position: relative;
+  input {
+    all: unset;
+    height: 6rem;
+    display: block;
+    width: 100%;
+    background: rgba($white, 0.6);
+    border-radius: 0.4rem 0 0 0.4rem;
+    padding: 0 0.8rem;
+    @include secondaryFont;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    &:focus {
+      background: $white;
+      &::placeholder {
+        opacity: 0.4;
+      }
+    }
+    &::placeholder {
+      font-size: 1.8rem;
+      transition: 0.3s;
+    }
+  }
+}
+.navigation__search_button {
+  all: unset;
+  width: 6rem;
+  height: 6rem;
+  @include flexCenter;
+  background: $ronchi;
+  cursor: pointer;
+  border-radius: 0 0.4rem 0.4rem 0;
+  transition: all ease-in-out 300ms;
+  &::after {
+    @include iconGenerator("\f002", $white, 2.4rem);
+    transition: all ease-in-out 300ms;
+  }
+  &:hover {
+    background: $white;
+    &::after {
+      color: $ronchi;
+    }
+  }
+}
+.search__results {
+  position: absolute;
+  background: $white;
+  top: 100%;
+  margin-top: 0.8rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  max-height: 32rem;
+  overflow-y: auto;
+  @include scrollbar;
+  box-shadow: 0.3rem 0.3rem 2.4rem rgba(0, 0, 0, 0.314);
+  &.no__search {
+    opacity: 0;
+    height: 0;
+  }
+  &.search__active {
+    opacity: 1;
+    height: max-content;
+  }
+}
+.movies_list {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.serach_head_title {
+  margin-top: 2.4rem;
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: $ronchi;
+  }
+}
+
+.nodata_container {
+  margin-top: 2.4rem;
+}

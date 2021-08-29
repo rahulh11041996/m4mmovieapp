@@ -1,0 +1,88 @@
+@use './colors' as *;
+@mixin primaryFont {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+@mixin secondaryFont {
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fullSize {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #b6b6b6;
+    border-radius: 20px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    transition: all ease 150ms;
+    &:hover {
+      background-color: #9b9b9b;
+    }
+  }
+}
+
+@mixin iconGenerator($icon, $color, $size) {
+  content: $icon;
+  font-family: "Font Awesome 5 Pro";
+  font-size: $size;
+  color: $color;
+  transition: all ease 250ms;
+}
+
+@mixin activeDot {
+  position: absolute;
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: $torchRed;
+  top: calc(100% + 0.4rem);
+  left: calc(50% - 0.2rem);
+  transition: 0.3s;
+}
+
+@mixin textEllipses($number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin primaryButton {
+  background: $torchRed;
+  color: $white;
+  border: none;
+  @include secondaryFont();
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  padding: 0.8rem 2.4rem;
+  border-radius: 1.6rem;
+  box-shadow: 0.4rem 0.4rem 2.4rem rgba($torchRed, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0.1rem 0.1rem 1.4rem rgba($torchRed, 0.5);
+    background: $white;
+    color: $torchRed;
+  }
+}

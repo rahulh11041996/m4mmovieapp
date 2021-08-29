@@ -1,0 +1,35 @@
+@use '../../../../assets/styles/colors' as *;
+@use '../../../../assets/styles/mixins' as *;
+.search__field_list {
+  padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background: rgba($scarpaFlow, 0.1);
+  }
+}
+
+.search__logo {
+  width: 5rem;
+  min-width: 5rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+}
+
+.serch__data {
+  h2 {
+    font-size: 1.4rem;
+    color: $woodsmoke;
+    font-weight: 500;
+    @include textEllipses(1);
+  }
+  h4 {
+    font-size: 1.2rem;
+    color: $woodsmoke;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    line-height: 1;
+  }
+}

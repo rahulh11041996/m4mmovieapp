@@ -1,0 +1,41 @@
+@use '../../../../assets/styles/colors' as *;
+@use '../../../../assets/styles/mixins' as *;
+.genre_tab__button {
+  color: $white;
+  @include primaryFont;
+  font-size: 1.5rem;
+  padding: 2rem 0rem;
+  text-align: center;
+  width: 12rem;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre_button__container {
+  position: relative;
+  width: max-content;
+  display: inline;
+  input {
+    position: absolute;
+    opacity: 0;
+    @include fullSize;
+    &:checked {
+      + .genre_tab__button {
+        color: $torchRed;
+        position: relative;
+        opacity: 1;
+        &::before {
+          @include activeDot;
+          top: calc(100% - 1.4rem);
+        }
+      }
+    }
+  }
+}

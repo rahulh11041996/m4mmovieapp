@@ -1,0 +1,10 @@
+.video__player {
+  max-width: 120rem;
+  margin-top: 1rem;
+  object {
+    max-width: 72rem;
+    aspect-ratio: 16/9;
+    display: block;
+    margin: auto;
+  }
+}

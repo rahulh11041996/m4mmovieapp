@@ -1,0 +1,31 @@
+@use '../../assets/styles/colors' as *;
+@use '../../assets/styles/mixins' as *;
+.movies_list {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.movies__head {
+  h1 {
+    &::before {
+      padding-right: 0.8rem;
+      font-weight: 800;
+    }
+    &.movies__icon {
+      &::before {
+        @include iconGenerator("\f03d", $white, 1rem);
+      }
+    }
+    &.series__icon {
+      &::before {
+        @include iconGenerator("\f401", $white, 1rem);
+      }
+    }
+    &.netflix__icon {
+      &::before {
+        @include iconGenerator("\f612", $white, 1.4rem);
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+}

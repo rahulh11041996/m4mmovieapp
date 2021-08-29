@@ -1,0 +1,89 @@
+@use '../../assets/styles/mixins' as *;
+@use '../../assets/styles/colors' as *;
+.page__banner {
+  height: calc(85vh - (var(--banner) * 1px));
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    @include fullSize;
+  }
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+  }
+  &::before {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(160, 160, 160, 0) 50%,
+      rgba(6, 6, 6, 0.4) 100%
+    );
+  }
+}
+
+.banner__content {
+  align-items: flex-start;
+  justify-content: center;
+  @include fullSize;
+  flex-direction: column;
+  position: relative;
+  p {
+    max-width: 60ch;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: $white;
+    text-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.125);
+    mix-blend-mode: hard-light;
+  }
+}
+
+.banner__rating_wrapper {
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  gap: 0.8rem;
+  padding-bottom: 1.6rem;
+  h2 {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    color: $white;
+    text-shadow: 0 0.3rem 1.6rem rgba(0, 0, 0, 0.376);
+  }
+  h4 {
+    background: $ronchi;
+    font-size: 2.2rem;
+    color: $woodsmoke;
+    align-items: center;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.4rem;
+    line-height: 2rem;
+    &::before {
+      @include iconGenerator("\f005", inherit, 1.4rem);
+      padding-right: 0.2rem;
+      font-weight: 600;
+    }
+  }
+}
+a {
+  position: relative;
+  z-index: 3;
+}
+.banner__button {
+  position: relative;
+  z-index: 3;
+  margin-top: 1.6rem;
+}

@@ -1,0 +1,153 @@
+@use '../../assets/styles/colors' as *;
+@use '../../assets/styles/mixins' as *;
+.detailed__container {
+  min-height: 100vh;
+  height: max-content;
+}
+.detailed__banner {
+  height: 65vh;
+  position: relative;
+  background-attachment: fixed !important;
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    @include fullSize;
+  }
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba($woodsmoke, 1) 100%
+    );
+  }
+  &::before {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(160, 160, 160, 0) 50%,
+      rgba(6, 6, 6, 0.4) 100%
+    );
+  }
+}
+
+.detailed__contain {
+  gap: 2.4rem 4rem;
+}
+.transilte__view {
+  max-width: 120rem;
+  width: 100%;
+  margin: -30vh auto 0;
+  padding: 1rem var(--layoutPadding) 2.4rem;
+  position: relative;
+}
+.detailed__poster {
+  width: 24rem;
+  min-width: 24rem;
+  height: 32rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 0.3rem 1.6rem rgba(8, 8, 8, 0.842);
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.detailed__movie_details {
+  h1 {
+    font-size: 3.2rem;
+    color: $white;
+    line-height: 1.25;
+  }
+  h2 {
+    color: $white;
+    font-weight: 500;
+    padding: 0.6rem 0 0.6rem 0.8rem;
+    margin: 0.6rem 0 1rem;
+    border-radius: 0.6rem;
+    background: linear-gradient(
+      to right,
+      rgba($ronchi, 0.5) 0%,
+      rgba($ronchi, 0.3) 40%,
+      rgba($ronchi, 0.1) 60%,
+      rgba($ronchi, 0) 80%,
+      rgba(6, 6, 6, 0) 100%
+    );
+  }
+  p {
+    color: $white;
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 2;
+  }
+}
+
+.review__details {
+  align-items: center;
+  gap: 1rem;
+  span {
+    font-size: 1.4rem;
+    color: $white;
+    font-weight: 300;
+  }
+  h6 {
+    font-size: 3rem;
+    color: $ronchi;
+    align-items: center;
+    font-weight: 500;
+    line-height: 0.8rem;
+    &::before {
+      @include iconGenerator("\f005", inherit, 1.8rem);
+      padding-right: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.review__details_container {
+  margin-top: 1.6rem;
+  padding: 2rem 0 0;
+  border-top: 0.0567rem dashed rgba($white, 0.5);
+  gap: 2.4rem 6.2rem;
+  align-items: center;
+}
+.popularity__wrapper {
+  align-items: center;
+  gap: 1rem;
+  span {
+    font-size: 1.4rem;
+    color: $white;
+    font-weight: 300;
+  }
+  h6 {
+    font-size: 3rem;
+    color: $ronchi;
+    align-items: center;
+    font-weight: 500;
+    line-height: 0.8rem;
+    &::before {
+      @include iconGenerator("\f819", inherit, 1.8rem);
+      padding-right: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.genre__wrapper {
+  gap: 1rem;
+  padding: 1rem 0;
+  h3 {
+    background: rgba($scarpaFlow, 0.35);
+    padding: 0.5rem 2rem;
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    border-radius: 1.6rem;
+  }
+}

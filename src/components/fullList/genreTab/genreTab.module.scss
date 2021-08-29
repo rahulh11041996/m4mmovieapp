@@ -1,0 +1,8 @@
+@use '../../../assets/styles/colors' as *;
+@use '../../../assets/styles/mixins' as *;
+.genre_tab__container {
+  padding: 0 var(--layoutPadding);
+}
+.genre_tab__wrapper {
+  border-bottom: 0.3rem solid $scarpaFlow;
+}

@@ -1,0 +1,22 @@
+@use './resets';
+@use './variables';
+@use './colors' as *;
+@use './classes';
+@use './mixins' as *;
+
+.layout_padding {
+  padding: 0 var(--layoutPadding);
+}
+
+.page_button {
+  @include primaryButton;
+}
+
+.loading__box {
+  max-width: 120rem;
+  @extend .wd_100;
+  > div {
+    position: static;
+    padding: 5rem 0;
+  }
+}

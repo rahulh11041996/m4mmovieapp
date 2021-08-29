@@ -1,0 +1,5 @@
+.movies_list {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 2rem;
+  padding: 2rem var(--layoutPadding);
+}
